@@ -66,6 +66,15 @@ const pushmessage = {
   text: 'Hello World!'
 };
 
+client2.pushMessage(userId, message)
+  .then(() => {
+    console.log('push!')
+  })
+  .catch((err) => {
+    // error handling
+});
+
+
 
 // create Express app
 // about Express itself: https://expressjs.com/
