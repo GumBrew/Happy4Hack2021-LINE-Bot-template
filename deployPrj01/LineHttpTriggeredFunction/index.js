@@ -20,6 +20,8 @@ const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.STO
 const containerClient = blobServiceClient.getContainerClient('files');
 
 // create LINE SDK config from env variables
+//kawa: テストしやすいようにアクセストークンとシークレットをハードコーディング（セキュリティ的にはいまいちですが）
+//kawa: Aさん用
 const config = {
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
@@ -27,8 +29,21 @@ const config = {
   channelSecret: "6e33abf6638853fd556ebc3741b8580f",
 };
 
+//kawa: Bさん用
+const config2 = {
+  //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelAccessToken: "xxxxx",
+  //channelSecret: process.env.CHANNEL_SECRET,
+  channelSecret: "xxxxx",
+};
+
+
 // create LINE SDK client
+// kawa:Aさん接続用LINEオブジェクトを生成
 const client = new line.Client(config);
+
+// kawa:Aさん接続用LINEオブジェクトを生成
+const client2 = new line.Client(config2);
 
 // create Express app
 // about Express itself: https://expressjs.com/
