@@ -60,7 +60,7 @@ const client2 = new line.Client({
   channelAccessToken: token
 });
 
-
+//https://developers.line.biz/ja/reference/messaging-api/#send-push-message
 const pushmessage = {
   type: 'text',
   text: 'Hello World!'
