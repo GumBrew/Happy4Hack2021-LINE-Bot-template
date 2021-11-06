@@ -183,14 +183,13 @@ async function handleEvent(event) {
   }
 
 
-  //client1.pushMessage(userId, message)
-  //.then(() => {
-  //  console.log('push!')
-  //})
-  //.catch((err) => {
+  client2.pushMessage(userId, message)
+  .then(() => {
+    console.log('push!')
+  })
+  .catch((err) => {
     // error handling
-  //});
-
+});
 
 
   // create a echoing text message
