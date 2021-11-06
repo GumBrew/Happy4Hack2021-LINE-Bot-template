@@ -5,7 +5,7 @@
 
 //kawa:定数（書き換えられたくない変数）を宣言
 //kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
-//kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになる
+//kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになると思われる
 const line = require('@line/bot-sdk');
 
 //kawa:その他いろいろな外部モジュールを読み込み
@@ -23,6 +23,7 @@ const containerClient = blobServiceClient.getContainerClient('files');
 //kawa: テストしやすいようにアクセストークンとシークレットをハードコーディング（セキュリティ的にはいまいちですが）
 //kawa: Aさん用
 const config = {
+  //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
@@ -31,6 +32,7 @@ const config = {
 
 //kawa: Bさん用
 const config2 = {
+  //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelAccessToken: "xxxxx",
   //channelSecret: process.env.CHANNEL_SECRET,
@@ -42,17 +44,19 @@ const config2 = {
 // kawa:Aさん接続用LINEオブジェクトを生成
 const client = new line.Client(config);
 
-// kawa:Aさん接続用LINEオブジェクトを生成
+// kawa:Bさん接続用LINEオブジェクトを生成
 const client2 = new line.Client(config2);
 
 // create Express app
 // about Express itself: https://expressjs.com/
+// express という外部フレームワークモジュールをロードしてインスタンス化
 const app = express();
 
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/api/linehttptriggeredfunction', line.middleware(config), (req, res) => {
   Promise
+  //kawa:handleEvent関数が呼ばれたら結果（result）をjson形式で（LINEに）返却　ってこと？
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
     .catch((err) => {
@@ -62,6 +66,7 @@ app.post('/api/linehttptriggeredfunction', line.middleware(config), (req, res) =
 });
 
 // event handler
+// kawa: async（非同期）型のhandleEvent(event)関数を定義
 async function handleEvent(event) {
   if (event.type !== 'message' && event.type !== 'postback') {
     // ignore non-text-message event
