@@ -25,9 +25,9 @@ const containerClient = blobServiceClient.getContainerClient('files');
 const config = {
   //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
+  channelAccessToken: "2s4Y6x+WMWQqDghdIprt2B+Wb8IHQxG6FYVe/EujOKEXXF/3H7U196M6XGWKcit9RQCD+6qTIiyLnaUw3l4QLQXsraqNUiJhNC9OggWlNoLmYm9rhAuukTydl2tOc5idlN6kjr/2u3pBgR/W40nnpgdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  channelSecret: "46d397205dcc0f1abc9837bc6f939954",
+  channelSecret: "f20da23d0bf6f5dc659d36eec78ac37c",
 
   //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
