@@ -21,23 +21,16 @@ const containerClient = blobServiceClient.getContainerClient('files');
 
 // create LINE SDK config from env variables
 //kawa: テストしやすいようにアクセストークンとシークレットをハードコーディング（セキュリティ的にはいまいちですが）
-//kawa: Aさん用
+//kawa: Aさん用の情報
 const config = {
   //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelAccessToken: "2s4Y6x+WMWQqDghdIprt2B+Wb8IHQxG6FYVe/EujOKEXXF/3H7U196M6XGWKcit9RQCD+6qTIiyLnaUw3l4QLQXsraqNUiJhNC9OggWlNoLmYm9rhAuukTydl2tOc5idlN6kjr/2u3pBgR/W40nnpgdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
   channelSecret: "f20da23d0bf6f5dc659d36eec78ac37c",
-
-  //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
-  //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  //channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
-  //channelSecret: process.env.CHANNEL_SECRET,
-  //channelSecret: "6e33abf6638853fd556ebc3741b8580f",
-
 };
 
-//kawa: Bさん用
+//kawa: Bさん用の情報
 const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -53,11 +46,11 @@ const client = new line.Client(config);
 // kawa:Bさん接続用LINEオブジェクトを生成
 const client2 = new line.Client(config2);
 
-// const token = 'Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU';
+// kawa:AさんのuserIdを定義
 const userId = 'U5e7442aa88d9ad061a14761447955f78';
-//const client2 = new line.Client({
-//  channelAccessToken: token
-//});
+
+// kawa:BさんのuserIdを定義
+const userId2 = 'U5e7442aa88d9ad061a14761447955f78';
 
 //https://developers.line.biz/ja/reference/messaging-api/#send-push-message
 const pushmessage = {
@@ -182,7 +175,7 @@ async function handleEvent(event) {
   }
 
 
-  client2.pushMessage(userId, pushmessage)
+  client2.pushMessage(userId2, pushmessage)
   .then(() => {
     console.log('push!')
   })
