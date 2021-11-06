@@ -89,15 +89,19 @@ async function handleEvent(event) {
     }
 
 
-
+// kawa: 感謝を伝えるボタン押下時のロジック
   } else if (event.message.type === 'text') {
     if (event.message.text === '感謝を伝えます') {
 
+
+      // kawa: 仮の感謝メッセージ（DBから取得するロジックに変更が必要）
       var pushmessage1 = {
         type: 'text',
         text: '2021/10/13 美味しいご飯を作ってくれてありがとう'
       };
-            
+
+      
+      // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, pushmessage1)
       .then(() => {
         console.log('push!')
@@ -107,11 +111,13 @@ async function handleEvent(event) {
     　});
       
 
+      // kawa: Aさん用のリプライメッセージを定義
       var returnmessage1 = {
         type: 'text',
         text: '感謝を伝えました'
       };
-  
+
+      // kawa: Aさんにリプライメッセージ
       return client.replyMessage(event.replyToken, returnmessage1);
             
 
@@ -151,6 +157,7 @@ async function handleEvent(event) {
       });
     }
 
+  // kawa: このあたりのロジックを活用すれば画像や音声も取り扱い可能？
   } else if (event.message.type === 'image') {
     //https://developers.line.biz/ja/reference/messaging-api/#image-message
     const blobName = uuidv4() + '.jpg'
@@ -188,24 +195,17 @@ async function handleEvent(event) {
   }
 
 
-  client2.pushMessage(userId2, pushmessage)
-  .then(() => {
-    console.log('push!')
-  })
-  .catch((err) => {
-    // error handling
-　});
-
 
   // create a echoing text message
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
-  const echo2 = { type: 'text', text: event.source.userId };
-  const echo3 = { type: 'text', text: userId };
+  // const echo2 = { type: 'text', text: event.source.userId };
+  const echo2 = { type: 'text', text: 'を登録しました' };
+
 
   // use reply API
   //kawa:応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2 , echo3]);
+  return client.replyMessage(event.replyToken, [echo , echo2]);
 }
 
 module.exports = createHandler(app);
