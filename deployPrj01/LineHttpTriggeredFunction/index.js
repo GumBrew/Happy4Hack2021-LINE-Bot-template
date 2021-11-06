@@ -78,11 +78,12 @@ app.post('/api/linehttptriggeredfunction', line.middleware(config), (req, res) =
 });
 
 // event handler
-// kawa: async（非同期）型のhandleEvent(event)関数を定義
+// kawa: async（非同期）型のhandleEvent(event)関数を定義（ここがメインのロジック関数）
 async function handleEvent(event) {
   if (event.type !== 'message' && event.type !== 'postback') {
     // ignore non-text-message event
     return Promise.resolve(null);
+
   } else if (event.type === 'postback') {
     if (event.postback.data === 'sticker') {
       //https://developers.line.biz/ja/reference/messaging-api/#sticker-message
@@ -93,15 +94,34 @@ async function handleEvent(event) {
         stickerId: "52002735"
       });
     }
-  
+
+
+
   } else if (event.message.type === 'text') {
     if (event.message.text === 'flex') {
-      //https://developers.line.biz/ja/reference/messaging-api/#flex-message
-      return client.replyMessage(event.replyToken,{
-        type: 'flex',
-        altText: 'item list',
-        contents: flexMsg
-      });
+
+      var pushmessage1 = {
+        type: 'text',
+        text: '2021/10/13 美味しいご飯を作ってくれてありがとう'
+      };
+            
+      client2.pushMessage(userId2, pushmessage1)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
+      
+
+      var returnmessage1 = {
+        type: 'text',
+        text: '感謝を伝えました'
+      };
+  
+      return client.replyMessage(event.replyToken, returnmessage1);
+            
+
     } else if (event.message.text === 'quick') {
       //https://developers.line.biz/ja/reference/messaging-api/#quick-reply
       return client.replyMessage(event.replyToken,{
