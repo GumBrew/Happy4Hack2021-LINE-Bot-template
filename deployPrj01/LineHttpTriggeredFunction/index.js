@@ -3,22 +3,28 @@
 //strictモード（厳格モード）に設定　エラーチェックが厳しくなるらしい
 'use strict';
 
-//定数（書き換えられたくない変数）を宣言
-
+//kawa:定数（書き換えられたくない変数）を宣言
+//kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
+//kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになる
 const line = require('@line/bot-sdk');
+
+//kawa:その他いろいろな外部モジュールを読み込み
 const createHandler = require("azure-function-express").createHandler;
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const { BlobServiceClient } = require("@azure/storage-blob");
 const { getStreamData } = require('./helpers/stream.js'); 
 
+
 const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.STORAGE_CONNECTION_STRING);
 const containerClient = blobServiceClient.getContainerClient('files');
 
 // create LINE SDK config from env variables
 const config = {
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelSecret: process.env.CHANNEL_SECRET,
+  //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
+  //channelSecret: process.env.CHANNEL_SECRET,
+  channelSecret: "6e33abf6638853fd556ebc3741b8580f",
 };
 
 // create LINE SDK client
