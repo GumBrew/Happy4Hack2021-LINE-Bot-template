@@ -66,7 +66,7 @@ const pushmessage = {
   text: 'Hello World!'
 };
 
-client2.pushMessage(userId, message)
+client2.pushMessage(userId, pushmessage)
   .then(() => {
     console.log('push!')
   })
