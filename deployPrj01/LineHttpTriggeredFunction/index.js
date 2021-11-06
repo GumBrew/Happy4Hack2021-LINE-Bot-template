@@ -25,27 +25,26 @@ const containerClient = blobServiceClient.getContainerClient('files');
 const config = {
   //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
+  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  channelSecret: "6e33abf6638853fd556ebc3741b8580f",
+  channelSecret: "46d397205dcc0f1abc9837bc6f939954",
 
-  //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
+  //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  //channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
+  //channelAccessToken: "0iXywz2Rl3lx3PQDduo0KmRg20ysCbl4gvVBoP7VHEUw0qUFyGaLgA0hPkXGveSdDRT1RkDzEqnsPPHZ/lCmRKRI93ZH2DhWdlE7Lh1QhRyy2mDPicZrG5AC1hPzbqaFVSzMN8AMs/pgC01093YTIwdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  //channelSecret: "46d397205dcc0f1abc9837bc6f939954x",
-
+  //channelSecret: "6e33abf6638853fd556ebc3741b8580f",
 
 };
 
 //kawa: Bさん用
-const config2 = {
+//const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
+//  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  channelSecret: "46d397205dcc0f1abc9837bc6f939954x",
-};
+//  channelSecret: "46d397205dcc0f1abc9837bc6f939954x",
+//};
 
 
 // create LINE SDK client
