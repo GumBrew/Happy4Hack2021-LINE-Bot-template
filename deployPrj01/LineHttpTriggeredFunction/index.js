@@ -52,7 +52,7 @@ const config = {
 const client = new line.Client(config);
 
 // kawa:Bさん接続用LINEオブジェクトを生成
-const client2 = new line.Client(config2);
+// const client2 = new line.Client(config2);
 
 // create Express app
 // about Express itself: https://expressjs.com/
