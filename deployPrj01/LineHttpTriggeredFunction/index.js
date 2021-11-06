@@ -54,7 +54,7 @@ const client = new line.Client(config);
 const client2 = new line.Client(config2);
 
 // const token = 'Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU';
-// const userId = 'U5e7442aa88d9ad061a14761447955f78';
+const userId = 'U5e7442aa88d9ad061a14761447955f78';
 //const client2 = new line.Client({
 //  channelAccessToken: token
 //});
