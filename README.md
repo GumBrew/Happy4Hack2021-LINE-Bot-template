@@ -1,13 +1,7 @@
-## memo
-起動に10分かかる
-
-## command
-
-```
 az upgrade
 az bicep install
 
-az login
+az login --use-device-code
 
  az account list \
    --refresh \
@@ -38,8 +32,3 @@ npm i
 func azure functionapp publish <functionAppName> --build remote
 
 #az group delete --name ${group_name}
-```
-
-##
-
-https://azure.github.io/AppService/2021/07/23/Quickstart-Intro-to-Bicep-with-Web-App-plus-DB.html
