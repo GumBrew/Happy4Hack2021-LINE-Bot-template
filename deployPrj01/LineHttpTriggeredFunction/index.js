@@ -66,13 +66,7 @@ const pushmessage = {
   text: 'Hello World!'
 };
 
-client2.pushMessage(userId, pushmessage)
-  .then(() => {
-    console.log('push!')
-  })
-  .catch((err) => {
-    // error handling
-});
+
 
 
 
@@ -192,13 +186,13 @@ async function handleEvent(event) {
   }
 
 
-//  client2.pushMessage(userId, message)
-//  .then(() => {
-//    console.log('push!')
-//  })
-//  .catch((err) => {
-//    // error handling
-//});
+  client2.pushMessage(userId, pushmessage)
+  .then(() => {
+    console.log('push!')
+  })
+  .catch((err) => {
+    // error handling
+});
 
 
   // create a echoing text message
