@@ -38,13 +38,15 @@ const config = {
 };
 
 //kawa: Bさん用
-//const config2 = {
+const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-//  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
+  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-//  channelSecret: "46d397205dcc0f1abc9837bc6f939954x",
+  channelSecret: "46d397205dcc0f1abc9837bc6f939954x",
 //};
+
+const userId = 'U5e7442aa88d9ad061a14761447955f78'
 
 
 // create LINE SDK client
@@ -52,7 +54,13 @@ const config = {
 const client = new line.Client(config);
 
 // kawa:Bさん接続用LINEオブジェクトを生成
-// const client2 = new line.Client(config2);
+const client2 = new line.Client(config2);
+
+const pushmessage = {
+  type: 'text',
+  text: 'Hello World!'
+};
+
 
 // create Express app
 // about Express itself: https://expressjs.com/
@@ -168,6 +176,17 @@ async function handleEvent(event) {
       longitude: event.message.longitude
     });
   }
+
+
+  client1.pushMessage(userId, message)
+  .then(() => {
+    console.log('push!')
+  })
+  .catch((err) => {
+    // error handling
+  });
+
+
 
   // create a echoing text message
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
