@@ -178,13 +178,13 @@ async function handleEvent(event) {
   }
 
 
-  client1.pushMessage(userId, message)
-  .then(() => {
-    console.log('push!')
-  })
-  .catch((err) => {
+  //client1.pushMessage(userId, message)
+  //.then(() => {
+  //  console.log('push!')
+  //})
+  //.catch((err) => {
     // error handling
-  });
+  //});
 
 
 
