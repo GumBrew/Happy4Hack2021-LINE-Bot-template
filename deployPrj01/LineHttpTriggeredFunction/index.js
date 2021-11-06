@@ -1,6 +1,9 @@
 //https://github.com/line/line-bot-sdk-nodejs/tree/next/examples/echo-bot
 //https://himanago.hatenablog.com/entry/2020/04/23/205202
+//strictモード（厳格モード）に設定　エラーチェックが厳しくなるらしい
 'use strict';
+
+//定数（書き換えられたくない変数）を宣言
 
 const line = require('@line/bot-sdk');
 const createHandler = require("azure-function-express").createHandler;
