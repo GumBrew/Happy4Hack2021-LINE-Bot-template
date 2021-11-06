@@ -91,7 +91,7 @@ async function handleEvent(event) {
 
 
   } else if (event.message.type === 'text') {
-    if (event.message.text === 'flex') {
+    if (event.message.text === '感謝を伝えます') {
 
       var pushmessage1 = {
         type: 'text',
