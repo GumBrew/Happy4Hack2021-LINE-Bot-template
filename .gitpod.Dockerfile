@@ -29,4 +29,4 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 # RUN sudo -u node npm install -g azure-functions-core-tools
 
 # Install Azure Fcuntions Core Tools
-RUN sudo -u node npm install -g azure-functions-core-toolsｓ
+RUN sudo -u node npm install -g azure-functions-core-tools
