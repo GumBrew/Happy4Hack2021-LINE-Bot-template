@@ -65,7 +65,7 @@ async function handleEvent(event) {
       //https://developers.line.biz/ja/reference/messaging-api/#quick-reply
       return client.replyMessage(event.replyToken,{
         type: 'text',
-        text: 'ステッカー欲しいですか❓YesかNoで答えてください, もしくは素敵な写真送って❗️',
+        text: 'ステッカー欲しいですか❓YesかNoで答えてくださいtest, もしくは素敵な写真送って❗️',
         "quickReply": {
           "items": [
             {
