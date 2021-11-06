@@ -165,7 +165,7 @@ async function handleEvent(event) {
   // create a echoing text message
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
-  const echo2 = { type: 'text', text: event.user.userid };
+  const echo2 = { type: 'text', text: event.source.userId };
 
   // use reply API
   //kawa:応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
