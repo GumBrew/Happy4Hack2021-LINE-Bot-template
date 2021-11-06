@@ -21,7 +21,10 @@ const containerClient = blobServiceClient.getContainerClient('files');
 
 // create LINE SDK config from env variables
 //kawa: テストしやすいようにアクセストークンとシークレットをハードコーディング（セキュリティ的にはいまいちですが）
+
 //kawa: Aさん用の情報
+//kawa:AさんのuserIdを定義
+const userId = 'U0af4573ec27255b17b7125f3bfbb5bfe';
 const config = {
   //Aさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -31,6 +34,8 @@ const config = {
 };
 
 //kawa: Bさん用の情報
+//kawa:BさんのuserIdを定義
+const userId2 = 'U5e7442aa88d9ad061a14761447955f78';
 const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -46,16 +51,11 @@ const client = new line.Client(config);
 // kawa:Bさん接続用LINEオブジェクトを生成
 const client2 = new line.Client(config2);
 
-// kawa:AさんのuserIdを定義
-const userId = 'U5e7442aa88d9ad061a14761447955f78';
-
-// kawa:BさんのuserIdを定義
-const userId2 = 'U5e7442aa88d9ad061a14761447955f78';
 
 //https://developers.line.biz/ja/reference/messaging-api/#send-push-message
 const pushmessage = {
   type: 'text',
-  text: 'Hello World!'
+  text: 'Hello World!12345'
 };
 
 
