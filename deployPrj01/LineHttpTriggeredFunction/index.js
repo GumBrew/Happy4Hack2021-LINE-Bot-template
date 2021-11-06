@@ -45,18 +45,11 @@ const config2 = {
 };
 
 // create LINE SDK client
-// kawa:Aさん接続用LINEオブジェクトを生成
+// kawa:Aさん用LINEBOT用LINEオブジェクトを生成
 const client = new line.Client(config);
 
-// kawa:Bさん接続用LINEオブジェクトを生成
+// kawa:Bさん用LINEBOT用LINEオブジェクトを生成
 const client2 = new line.Client(config2);
-
-
-//https://developers.line.biz/ja/reference/messaging-api/#send-push-message
-const pushmessage = {
-  type: 'text',
-  text: 'Hello World!12345'
-};
 
 
 // create Express app
