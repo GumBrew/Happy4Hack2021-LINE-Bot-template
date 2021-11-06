@@ -181,7 +181,7 @@ async function handleEvent(event) {
   })
   .catch((err) => {
     // error handling
-});
+　});
 
 
   // create a echoing text message
