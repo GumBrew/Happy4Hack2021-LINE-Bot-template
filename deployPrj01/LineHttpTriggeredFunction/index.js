@@ -202,23 +202,6 @@ async function handleEvent(event) {
     });
   }
 
-
-  //DBへの接続
-  // <CreateClientObjectDatabaseContainer>
-  const { endpoint, key, databaseId, containerId } = configDB;
-
-  const clientDB = new CosmosClient({ endpoint, key });
-
-  const database = clientDB.database(databaseId);
-  const container = database.container(containerId);
-
-  // Make sure Tasks database is already setup. If not, create it.
-  await dbContext.create(clientDB, databaseId, containerId);
-  // </CreateClientObjectDatabaseContainer>
-  //ここまでDBへの接続
-
-  
-
 　// ↑までDB接続テスト　create a echoing text message
 
 
