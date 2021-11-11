@@ -11,7 +11,7 @@ const configDB = require("./config");
 const dbContext = require("./data/databaseContext");
 //  </ImportConfiguration>
 
-//ここまでDB関連の設定
+//ここまでDB関連の設定　tes
 
 //kawa:定数（書き換えられたくない変数）を宣言
 //kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
