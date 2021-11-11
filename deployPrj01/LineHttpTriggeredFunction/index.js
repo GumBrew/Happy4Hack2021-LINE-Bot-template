@@ -248,7 +248,7 @@ async function handleEvent(event) {
   newItem.id = s;
   newItem.category = "text";
   newItem.time = "23:00";
-  newItem.description = event.source.userId;
+  newItem.description = event.message.text;
   //  </DefineNewItem>
     // <CreateItem>
     /** Create new item
