@@ -45,14 +45,15 @@ const config = {
 
 //kawa: Bさん用の情報
 //kawa:BさんのuserIdを定義
-const userId2 = 'U8e9503aef9658fc982742dcc26307726';
+const userId2 = 'U5e7442aa88d9ad061a14761447955f78';
 const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelAccessToken: "0EVfbmMFQtLTD8qYvqCy4OEs+6MfbCBpjMZ9cuWqny23SdPGiu23kN2R5oK6Gq47rRDSUeZDBQouisJ2vyOqV/7uLZcMTl3OScBffj6cqUtVDHDPnt8ICvkqBcJqGrUha/pgtjD9o9jFVF/khobXpQdB04t89/1O/w1cDnyilFU=",
+  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  channelSecret: "95d6fd61f4b9e5e8aca2021b3997d0da",
+  channelSecret: "46d397205dcc0f1abc9837bc6f939954",
 };
+
 
 // create LINE SDK client
 // kawa:Aさん用LINEBOT用LINEオブジェクトを生成
