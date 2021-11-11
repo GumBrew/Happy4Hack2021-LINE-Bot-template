@@ -235,18 +235,18 @@ async function handleEvent(event) {
 
   //DBへ登録
   //  <DefineNewItem>
-//const newItem = {
- //   id: "3",
- //   category: "schedule",
- //   time: "23:00",
- //   description: "歯を磨く",
- // };
+  const newItem = {
+   id: "4",
+   category: "test",
+   time: "23:00",
+   description: "歯を磨く",
+  };
   //  </DefineNewItem>
     // <CreateItem>
     /** Create new item
      * newItem is defined at the top of this file
      */
-  //   const { resource: createdItem } = await container.items.create(newItem);
+     const { resource: createdItem } = await container.items.create(newItem);
     
      // </CreateItem>
      //ここまでDBへの登録
