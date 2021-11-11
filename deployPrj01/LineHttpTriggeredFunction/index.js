@@ -45,13 +45,13 @@ const config = {
 
 //kawa: Bさん用の情報
 //kawa:BさんのuserIdを定義
-const userId2 = 'U5e7442aa88d9ad061a14761447955f78';
+const userId2 = 'U8e9503aef9658fc982742dcc26307726';
 const config2 = {
   //Bさん用のLINEのチャネルアクセストークンとシークレットを↓の""に記入
   //channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelAccessToken: "Yko44X8qrMuYUTTxy3cBisv3AmDAtsK+HuMriKEuX2U40EOnbHZRY2iWyEp8IY5Rlcjt+Xnz7HFou5waZ5Hq3duS1e9938pM5RMHJQ04jWLBaY3TtBDQCkprW8G3vuEFaLsHKejvPeRHknpETPnFCAdB04t89/1O/w1cDnyilFU=",
+  channelAccessToken: "0EVfbmMFQtLTD8qYvqCy4OEs+6MfbCBpjMZ9cuWqny23SdPGiu23kN2R5oK6Gq47rRDSUeZDBQouisJ2vyOqV/7uLZcMTl3OScBffj6cqUtVDHDPnt8ICvkqBcJqGrUha/pgtjD9o9jFVF/khobXpQdB04t89/1O/w1cDnyilFU=",
   //channelSecret: process.env.CHANNEL_SECRET,
-  channelSecret: "46d397205dcc0f1abc9837bc6f939954",
+  channelSecret: "95d6fd61f4b9e5e8aca2021b3997d0da",
 };
 
 // create LINE SDK client
@@ -213,7 +213,7 @@ async function handleEvent(event) {
 
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
-  // const echo2 = { type: 'text', text: event.source.userId };
+  const echo5 = { type: 'text', text: event.source.userId };
   const echo2 = { type: 'text', text: 'を登録しましたtest' };
 
 
@@ -317,7 +317,7 @@ async function handleEvent(event) {
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [kansya1 , kansya2 , kansya3 , kansya4]);
+  return client.replyMessage(event.replyToken, [kansya1 , kansya2 , kansya3 , kansya4 , echo5]);
 }
 
 module.exports = createHandler(app);
