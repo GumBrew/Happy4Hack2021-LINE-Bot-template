@@ -123,16 +123,95 @@ async function handleEvent(event) {
       await dbContext.create(clientDB, databaseId, containerId);
       // </CreateClientObjectDatabaseContainer>
       //ここまでDBへの接続
+
+      //DBから取得
+      // <QueryItems>
+      console.log(`Querying container: Items`);
+
+      // query to return all items
+      const querySpec = {
+        query: "SELECT * from c"
+      };
+    
+      // read all items in the Items container
+      const { resources: items } = await container.items
+        .query(querySpec)
+        .fetchAll();
+
+      let getitems = "";
+      items.forEach(item => {
+        console.log(`${item.id} - ${item.description}`);
+        getitems =  getitems+item.description+",";
+      });
+
+     // create a echoing text message
+      const echo3 = { type: 'text', text: getitems};
+
+　    const getaitemsAry = getitems.split(',')
+      const hairetukazu = getaitemsAry.length;
+
+      const kansyatext = getaitemsAry[getaitemsAry.length -2 ];
+
+　    const kansya1 = { type: 'text', text: getaitemsAry[getaitemsAry.length -6 ]};
+
+      const kansya2 = { type: 'text', text: getaitemsAry[getaitemsAry.length -5 ]};
+
+      const kansya3 = { type: 'text', text: getaitemsAry[getaitemsAry.length -4 ]};
+
+      const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length -3 ]};
+   
+      const kansya5 = { type: 'text', text: getaitemsAry[getaitemsAry.length -2 ]};
+   
+
       
       // kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, pushmessage1)
+      client2.pushMessage(userId2, kansya1)
       .then(() => {
         console.log('push!')
       })
       .catch((err) => {
         // error handling
     　});
-      
+
+      // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, kansya2)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
+
+      // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, kansya3)
+          .then(() => {
+            console.log('push!')
+          })
+          .catch((err) => {
+            // error handling
+        　});
+
+           // kawa: Bさんに感謝メッセージをプッシュ
+           client2.pushMessage(userId2, kansya4)
+           .then(() => {
+             console.log('push!')
+           })
+           .catch((err) => {
+             // error handling
+         　});
+
+         
+               // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, kansya5)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
+
+
+
 
       // kawa: Aさん用のリプライメッセージを定義
       var returnmessage1 = {
