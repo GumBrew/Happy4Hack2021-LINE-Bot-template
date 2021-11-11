@@ -282,7 +282,7 @@ async function handleEvent(event) {
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2 , echo3]);
+  return client.replyMessage(event.replyToken, [echo , echo2 , kansya1]);
 }
 
 module.exports = createHandler(app);
