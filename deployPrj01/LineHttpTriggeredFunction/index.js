@@ -204,7 +204,7 @@ async function handleEvent(event) {
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
   // const echo2 = { type: 'text', text: event.source.userId };
-  const echo2 = { type: 'text', text: 'を登録しました' };
+  const echo2 = { type: 'text', text: 'を登録しましたtest' };
 
 
   // use reply API
