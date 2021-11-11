@@ -3,6 +3,16 @@
 //strictモード（厳格モード）に設定　エラーチェックが厳しくなるらしい
 'use strict';
 
+
+// @ts-check DB関連の設定
+//  <ImportConfiguration>
+const CosmosClient = require("@azure/cosmos").CosmosClient;
+const configDB = require("./config");
+const dbContext = require("./data/databaseContext");
+//  </ImportConfiguration>
+
+//ここまでDB関連の設定
+
 //kawa:定数（書き換えられたくない変数）を宣言
 //kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
 //kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになると思われる
