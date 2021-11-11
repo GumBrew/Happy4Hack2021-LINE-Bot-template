@@ -152,16 +152,19 @@ async function handleEvent(event) {
 
       const kansyatext = getaitemsAry[getaitemsAry.length -2 ];
 
-　    const kansya1 = { type: 'text', text: getaitemsAry[getaitemsAry.length -6 ]};
+　    const kansya1 = { type: 'text', text: getaitemsAry[getaitemsAry.length -8 ]};
 
-      const kansya2 = { type: 'text', text: getaitemsAry[getaitemsAry.length -5 ]};
+      const kansya2 = { type: 'text', text: getaitemsAry[getaitemsAry.length -7 ]};
 
-      const kansya3 = { type: 'text', text: getaitemsAry[getaitemsAry.length -4 ]};
+      const kansya3 = { type: 'text', text: getaitemsAry[getaitemsAry.length -6 ]};
 
-      const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length -3 ]};
+      const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length -5 ]};
    
-      const kansya5 = { type: 'text', text: getaitemsAry[getaitemsAry.length -2 ]};
-   
+      const kansya5 = { type: 'text', text: getaitemsAry[getaitemsAry.length -4 ]};
+
+      const kansya6 = { type: 'text', text: getaitemsAry[getaitemsAry.length -3 ]};
+      
+      const kansya7 = { type: 'text', text: getaitemsAry[getaitemsAry.length -2 ]};
 
       
       // kawa: Bさんに感謝メッセージをプッシュ
@@ -173,6 +176,12 @@ async function handleEvent(event) {
         // error handling
     　});
 
+    const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    await _sleep(4000);
+
+
+
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya2)
       .then(() => {
@@ -181,6 +190,9 @@ async function handleEvent(event) {
       .catch((err) => {
         // error handling
     　});
+
+    await _sleep(4000);
+
 
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya3)
@@ -191,6 +203,9 @@ async function handleEvent(event) {
             // error handling
         　});
 
+        await _sleep(4000);
+
+
            // kawa: Bさんに感謝メッセージをプッシュ
            client2.pushMessage(userId2, kansya4)
            .then(() => {
@@ -199,6 +214,8 @@ async function handleEvent(event) {
            .catch((err) => {
              // error handling
          　});
+
+         await _sleep(4000);
 
          
                // kawa: Bさんに感謝メッセージをプッシュ
@@ -209,6 +226,41 @@ async function handleEvent(event) {
       .catch((err) => {
         // error handling
     　});
+
+         await _sleep(4000);
+
+         
+               // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, kansya5)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
+
+    await _sleep(4000);
+
+         
+    // kawa: Bさんに感謝メッセージをプッシュ
+   client2.pushMessage(userId2, kansya6)
+   .then(() => {
+   console.log('push!')
+   })
+   .catch((err) => {
+   // error handling
+　  });
+
+await _sleep(4000);
+         
+   // kawa: Bさんに感謝メッセージをプッシュ
+   client2.pushMessage(userId2, kansya7)
+   .then(() => {
+  console.log('push!')
+  })
+  .catch((err) => {
+  // error handling
+　  });
 
 
 
@@ -306,7 +358,7 @@ async function handleEvent(event) {
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
   const echo5 = { type: 'text', text: event.source.userId };
-  const echo2 = { type: 'text', text: 'を登録しましたtest' };
+  const echo2 = { type: 'text', text: 'を登録しました' };
 
 
 
@@ -409,7 +461,7 @@ async function handleEvent(event) {
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [kansya1 , kansya2 , kansya3 , kansya4 , echo5]);
+  return client.replyMessage(event.replyToken, [echo , echo2]);
 }
 
 module.exports = createHandler(app);
