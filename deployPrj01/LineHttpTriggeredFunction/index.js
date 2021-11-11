@@ -3,14 +3,6 @@
 //strictモード（厳格モード）に設定　エラーチェックが厳しくなるらしい
 'use strict';
 
-// @ts-check DB関連の設定
-//  <ImportConfiguration>
-　//const CosmosClient = require("@azure/cosmos").CosmosClient;
-　//const configDB = require("./config");
-　//const dbContext = require("./data/databaseContext");
-//  </ImportConfiguration>
-
-
 //kawa:定数（書き換えられたくない変数）を宣言
 //kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
 //kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになると思われる
@@ -202,7 +194,6 @@ async function handleEvent(event) {
     });
   }
 
-　// ↑までDB接続テスト　create a echoing text message
 
 
   // create a echoing text message
@@ -213,12 +204,12 @@ async function handleEvent(event) {
   //kawa:LINEからjson形式で受け取ったデータのうち、text部分をそのまま変数セット
   const echo = { type: 'text', text: event.message.text };
   // const echo2 = { type: 'text', text: event.source.userId };
-  const echo2 = { type: 'text', text: 'を登録しましたtest' };
+  const echo2 = { type: 'text', text: 'を登録しました' };
 
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2, echo3]);
+  return client.replyMessage(event.replyToken, [echo , echo2]);
 }
 
 module.exports = createHandler(app);
