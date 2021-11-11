@@ -5,9 +5,9 @@
 
 // @ts-check DB関連の設定
 //  <ImportConfiguration>
-const CosmosClient = require("@azure/cosmos").CosmosClient;
-const configDB = require("./config");
-const dbContext = require("./data/databaseContext");
+　//const CosmosClient = require("@azure/cosmos").CosmosClient;
+　//const configDB = require("./config");
+　//const dbContext = require("./data/databaseContext");
 //  </ImportConfiguration>
 
 
