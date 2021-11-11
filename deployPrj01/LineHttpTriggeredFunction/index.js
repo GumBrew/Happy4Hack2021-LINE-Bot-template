@@ -261,7 +261,7 @@ async function handleEvent(event) {
   newItem.id = s;
   newItem.category = "text";
   newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
-  newItem.description = event.message.text+"|";
+  newItem.description = event.message.text;
   //  </DefineNewItem>
     // <CreateItem>
     /** Create new item
@@ -296,6 +296,9 @@ async function handleEvent(event) {
    const echo3 = { type: 'text', text: getitems};
 
 　 const getaitemsAry = getitems.split(',')
+   const hairetukazu = getaitemsAry.length;
+
+   const kansyatext = getaitemsAry[getaitemsAry.length -2 ];
 
 　 const kansya1 = { type: 'text', text: getaitemsAry[0]};
 
@@ -303,7 +306,11 @@ async function handleEvent(event) {
 
    const kansya3 = { type: 'text', text: getaitemsAry[2]};
 
-   const kansya4 = { type: 'text', text: getaitemsAry[3]};
+   const kansya4 = { type: 'text', text: kansyatext};
+
+//   const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length-1]};
+
+ //  const kansya4 = { type: 'text', text: getaitemsAry.slice(-1)[0]};
 
    //const kansya4 = { type: 'text', text: ransuu};
 
