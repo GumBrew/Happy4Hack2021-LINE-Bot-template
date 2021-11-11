@@ -21,7 +21,7 @@ const line = require('@line/bot-sdk');
 //kawa:その他いろいろな外部モジュールを読み込み
 const createHandler = require("azure-function-express").createHandler;
 const express = require('express');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4, stringify } = require('uuid');
 const { BlobServiceClient } = require("@azure/storage-blob");
 const { getStreamData } = require('./helpers/stream.js'); 
 
@@ -236,13 +236,15 @@ async function handleEvent(event) {
   var min = 1 ;
   var max = 9999999 ;
   
-  var ransuu = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  const ransuu = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+
+  const ransuus = string(ransuu)
 
 
   //DBへ登録
   //  <DefineNewItem>
    const newItem = {
-    id: rannsuu,
+    id: "123456",
     category: "test",
     time: "23:00",
     description: "お風呂入れてくれてありがとう",
