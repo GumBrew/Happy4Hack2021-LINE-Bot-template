@@ -242,7 +242,7 @@ async function handleEvent(event) {
   //DBへ登録
   //  <DefineNewItem>
    const newItem = {
-    id: "11114",
+    id: rannsuu,
     category: "test",
     time: "23:00",
     description: "お風呂入れてくれてありがとう",
