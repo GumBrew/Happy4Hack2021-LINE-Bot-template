@@ -278,11 +278,16 @@ async function handleEvent(event) {
 
 　 const kansya1 = { type: 'text', text: getaitemsAry[0]};
 
+   const kansya2 = { type: 'text', text: getaitemsAry[1]};
+
+   const kansya3 = { type: 'text', text: getaitemsAry[2]};
+
+   const kansya4 = { type: 'text', text: getaitemsAry[3]};
 
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2 , kansya1]);
+  return client.replyMessage(event.replyToken, [kansya1 , kansya2 , kansya3 , kansya4]);
 }
 
 module.exports = createHandler(app);
