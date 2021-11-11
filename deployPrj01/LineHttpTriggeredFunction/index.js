@@ -110,6 +110,19 @@ async function handleEvent(event) {
         text: '2021/10/13 美味しいご飯を作ってくれてありがとう'
       };
 
+      //DBへの接続
+      // <CreateClientObjectDatabaseContainer>
+      const { endpoint, key, databaseId, containerId } = configDB;
+
+      const clientDB = new CosmosClient({ endpoint, key });
+
+      const database = clientDB.database(databaseId);
+      const container = database.container(containerId);
+
+      // Make sure Tasks database is already setup. If not, create it.
+      await dbContext.create(clientDB, databaseId, containerId);
+      // </CreateClientObjectDatabaseContainer>
+      //ここまでDBへの接続
       
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, pushmessage1)
