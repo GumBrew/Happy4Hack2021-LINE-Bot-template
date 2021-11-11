@@ -217,6 +217,65 @@ async function handleEvent(event) {
   const echo2 = { type: 'text', text: 'を登録しましたtest' };
 
 
+
+
+//DBへの接続
+  // <CreateClientObjectDatabaseContainer>
+  const { endpoint, key, databaseId, containerId } = configDB;
+
+  const clientDB = new CosmosClient({ endpoint, key });
+
+  const database = clientDB.database(databaseId);
+  const container = database.container(containerId);
+
+  // Make sure Tasks database is already setup. If not, create it.
+  await dbContext.create(clientDB, databaseId, containerId);
+  // </CreateClientObjectDatabaseContainer>
+  //ここまでDBへの接続
+
+  //DBへ登録
+  //  <DefineNewItem>
+const newItem = {
+    id: "3",
+    category: "schedule",
+    time: "23:00",
+    description: "歯を磨く",
+  };
+  //  </DefineNewItem>
+    // <CreateItem>
+    /** Create new item
+     * newItem is defined at the top of this file
+     */
+     const { resource: createdItem } = await container.items.create(newItem);
+    
+     // </CreateItem>
+     //ここまでDBへの登録
+
+     //DBから取得
+    // <QueryItems>
+    console.log(`Querying container: Items`);
+
+    // query to return all items
+    const querySpec = {
+      query: "SELECT * from c"
+    };
+    
+    // read all items in the Items container
+    const { resources: items } = await container.items
+      .query(querySpec)
+      .fetchAll();
+
+    let getitems = "";
+    items.forEach(item => {
+      console.log(`${item.id} - ${item.description}`);
+      getitems =  getitems+item.description;
+    });
+
+  // create a echoing text message
+   const echo3 = { type: 'text', text: getitems};
+
+
+
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
   return client.replyMessage(event.replyToken, [echo , echo2]);
