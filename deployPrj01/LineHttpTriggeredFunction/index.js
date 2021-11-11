@@ -242,13 +242,26 @@ async function handleEvent(event) {
 
   //const textmessage = "あいうえお" ;
 
+  //日付定義
+  var now = new Date();
+  
+  var Year = now.getFullYear();
+  var Month = now.getMonth()+1;
+  const Day = now.getDate();
+  var Hour = now.getHours();
+  var Min = now.getMinutes();
+  //  var Sec = now.getSeconds();
+
+  //  var yyyymmddhhmm = Year + "年" + Month + "月" + Date + "日";
+    //var yyyymmddhhmm = Year + "年" + Month + "月" + Date + "日" + Hour + ":" + Min + ":" + Sec;
+
   //DBへ登録
   var newItem = {};
   //  <DefineNewItem>
   newItem.id = s;
   newItem.category = "text";
-  newItem.time = "23:00";
-  newItem.description = event.message.text;
+  newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
+  newItem.description = event.message.text+"|";
   //  </DefineNewItem>
     // <CreateItem>
     /** Create new item
