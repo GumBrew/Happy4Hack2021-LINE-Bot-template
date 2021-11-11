@@ -233,22 +233,22 @@ async function handleEvent(event) {
   // </CreateClientObjectDatabaseContainer>
   //ここまでDBへの接続
 
-  var min = 1 ;
-  var max = 9999999 ;
-  
-  const ransuu = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+ //乱数で主キー設定
+  　var min = 5 ;
+  　var max = 99999999 ;
+ 
+  　　var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  　  var s = String(a);
 
-  const ransuus = string(ransuu)
-
+  //const textmessage = "あいうえお" ;
 
   //DBへ登録
+  var newItem = {};
   //  <DefineNewItem>
-   const newItem = {
-    id: "123456",
-    category: "test",
-    time: "23:00",
-    description: "お風呂入れてくれてありがとう",
-   };
+  newItem.id = s;
+  newItem.category = "text";
+  newItem.time = "23:00";
+  newItem.description = "Thank You";
   //  </DefineNewItem>
     // <CreateItem>
     /** Create new item
@@ -290,9 +290,9 @@ async function handleEvent(event) {
 
    const kansya3 = { type: 'text', text: getaitemsAry[2]};
 
-   //const kansya4 = { type: 'text', text: getaitemsAry[3]};
+   const kansya4 = { type: 'text', text: getaitemsAry[3]};
 
-   const kansya4 = { type: 'text', text: ransuu};
+   //const kansya4 = { type: 'text', text: ransuu};
 
 
   // use reply API
