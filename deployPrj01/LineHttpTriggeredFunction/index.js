@@ -168,14 +168,16 @@ async function handleEvent(event) {
 
       const kansyagazou = {
         type: 'image',
-        originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/985ca0b6-df68-489e-ae90-36f5ded0b308.jpg`,
-        previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/985ca0b6-df68-489e-ae90-36f5ded0b308.jpg`
+        originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/aed41e6f-c810-4ebe-80ce-01886f2cf93d.jpg`,
+        previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/aed41e6f-c810-4ebe-80ce-01886f2cf93d.jpg`
       };
   
       const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
       await _sleep(3000);
  
+
+
 
       
       // kawa: Bさんに感謝メッセージをプッシュ
@@ -236,7 +238,21 @@ async function handleEvent(event) {
         // error handling
     　});
 
+    await _sleep(3500);
+
+
+                   // kawa: Bさんに感謝画像をプッシュ
+                   client2.pushMessage(userId2, kansyagazou)
+                   .then(() => {
+                     console.log('push!')
+                   })
+                   .catch((err) => {
+                     // error handling
+                 　});
+
+
          await _sleep(3500);
+
 
          
          
@@ -321,6 +337,7 @@ async function handleEvent(event) {
       type: 'image',
       originalContentUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`,
       previewImageUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`
+      , type: 'text' , text: blobName
     });
 
     //  return client.replyMessage(event.replyToken,{
