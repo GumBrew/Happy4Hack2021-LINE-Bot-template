@@ -246,7 +246,7 @@ async function handleEvent(event) {
     /** Create new item
      * newItem is defined at the top of this file
      */
-  //    const { resource: createdItem } = await container.items.create(newItem);
+  //   const { resource: createdItem } = await container.items.create(newItem);
     
      // </CreateItem>
      //ここまでDBへの登録
@@ -268,7 +268,7 @@ async function handleEvent(event) {
     let getitems = "";
     items.forEach(item => {
       console.log(`${item.id} - ${item.description}`);
-      getitems =  getitems+item.description;
+      getitems =  getitems+item.description+",";
     });
 
   // create a echoing text message
@@ -278,7 +278,7 @@ async function handleEvent(event) {
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2 ,echo3]);
+  return client.replyMessage(event.replyToken, [echo , echo2 , echo3]);
 }
 
 module.exports = createHandler(app);
