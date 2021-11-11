@@ -3,6 +3,14 @@
 //strictモード（厳格モード）に設定　エラーチェックが厳しくなるらしい
 'use strict';
 
+// @ts-check DB関連の設定
+//  <ImportConfiguration>
+const CosmosClient = require("@azure/cosmos").CosmosClient;
+const configDB = require("./config");
+const dbContext = require("./data/databaseContext");
+//  </ImportConfiguration>
+
+
 //kawa:定数（書き換えられたくない変数）を宣言
 //kawa:外部モジュールを読み込む　※const 変数 = require( モジュール名 );　が構文らしい
 //kawa:LINE提供の外部モジュールを読み込む　これでLineのAPIを呼び出すことができるようになると思われる
@@ -195,6 +203,64 @@ async function handleEvent(event) {
   }
 
 
+  //DBへの接続
+  // <CreateClientObjectDatabaseContainer>
+  const { endpoint, key, databaseId, containerId } = configDB;
+
+  const clientDB = new CosmosClient({ endpoint, key });
+
+  const database = clientDB.database(databaseId);
+  const container = database.container(containerId);
+
+  // Make sure Tasks database is already setup. If not, create it.
+  await dbContext.create(clientDB, databaseId, containerId);
+  // </CreateClientObjectDatabaseContainer>
+  //ここまでDBへの接続
+
+  //DBへ登録
+  //  <DefineNewItem>
+const newItem = {
+    id: "3",
+    category: "schedule",
+    time: "23:00",
+    description: "歯を磨く",
+  };
+  //  </DefineNewItem>
+    // <CreateItem>
+    /** Create new item
+     * newItem is defined at the top of this file
+     */
+     const { resource: createdItem } = await container.items.create(newItem);
+    
+     // </CreateItem>
+     //ここまでDBへの登録
+
+     //DBから取得
+    // <QueryItems>
+    console.log(`Querying container: Items`);
+
+    // query to return all items
+    const querySpec = {
+      query: "SELECT * from c"
+    };
+    
+    // read all items in the Items container
+    const { resources: items } = await container.items
+      .query(querySpec)
+      .fetchAll();
+
+    let getitems = "";
+    items.forEach(item => {
+      console.log(`${item.id} - ${item.description}`);
+      getitems =  getitems+item.description;
+    });
+
+  // create a echoing text message
+   const echo3 = { type: 'text', text: getitems};
+
+
+　// ↑までDB接続テスト　create a echoing text message
+
 
   // create a echoing text message
 
@@ -209,7 +275,7 @@ async function handleEvent(event) {
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
-  return client.replyMessage(event.replyToken, [echo , echo2]);
+  return client.replyMessage(event.replyToken, [echo , echo2, echo3]);
 }
 
 module.exports = createHandler(app);
