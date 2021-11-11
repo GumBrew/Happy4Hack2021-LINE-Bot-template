@@ -217,47 +217,7 @@ async function handleEvent(event) {
   // </CreateClientObjectDatabaseContainer>
   //ここまでDBへの接続
 
-  //DBへ登録
-  //  <DefineNewItem>
-const newItem = {
-    id: "3",
-    category: "schedule",
-    time: "23:00",
-    description: "歯を磨く",
-  };
-  //  </DefineNewItem>
-    // <CreateItem>
-    /** Create new item
-     * newItem is defined at the top of this file
-     */
-     const { resource: createdItem } = await container.items.create(newItem);
-    
-     // </CreateItem>
-     //ここまでDBへの登録
-
-     //DBから取得
-    // <QueryItems>
-    console.log(`Querying container: Items`);
-
-    // query to return all items
-    const querySpec = {
-      query: "SELECT * from c"
-    };
-    
-    // read all items in the Items container
-    const { resources: items } = await container.items
-      .query(querySpec)
-      .fetchAll();
-
-    let getitems = "";
-    items.forEach(item => {
-      console.log(`${item.id} - ${item.description}`);
-      getitems =  getitems+item.description;
-    });
-
-  // create a echoing text message
-   const echo3 = { type: 'text', text: getitems};
-
+  
 
 　// ↑までDB接続テスト　create a echoing text message
 
