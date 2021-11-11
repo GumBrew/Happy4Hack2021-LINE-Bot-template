@@ -166,6 +166,17 @@ async function handleEvent(event) {
       
       const kansya7 = { type: 'text', text: getaitemsAry[getaitemsAry.length -2 ]};
 
+      const kansyagazou = {
+        type: 'image',
+        originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/985ca0b6-df68-489e-ae90-36f5ded0b308.jpg`,
+        previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/985ca0b6-df68-489e-ae90-36f5ded0b308.jpg`
+      };
+  
+      const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      await _sleep(3000);
+ 
+
       
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya1)
@@ -176,10 +187,8 @@ async function handleEvent(event) {
         // error handling
     　});
 
-    const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    await _sleep(5000);
-
+    await _sleep(3000);
 
 
       // kawa: Bさんに感謝メッセージをプッシュ
@@ -230,17 +239,6 @@ async function handleEvent(event) {
          await _sleep(3500);
 
          
-               // kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, kansya5)
-      .then(() => {
-        console.log('push!')
-      })
-      .catch((err) => {
-        // error handling
-    　});
-
-    await _sleep(3500);
-
          
     // kawa: Bさんに感謝メッセージをプッシュ
    client2.pushMessage(userId2, kansya6)
@@ -251,16 +249,16 @@ async function handleEvent(event) {
    // error handling
 　  });
 
-await _sleep(3500);
+//await _sleep(3500);
          
    // kawa: Bさんに感謝メッセージをプッシュ
-   client2.pushMessage(userId2, kansya7)
-   .then(() => {
-  console.log('push!')
-  })
-  .catch((err) => {
+  // client2.pushMessage(userId2, kansya7)
+   //.then(() => {
+  //console.log('push!')
+  //})
+  //.catch((err) => {
   // error handling
-　  });
+　//  });
 
 
 
@@ -324,6 +322,13 @@ await _sleep(3500);
       originalContentUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`,
       previewImageUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`
     });
+
+    //  return client.replyMessage(event.replyToken,{
+  //    type: 'image',
+  //    originalContentUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`,
+  //    previewImageUrl: `https://${blobServiceClient.accountName}.blob.core.windows.net/files/${blobName}`
+  //    , type: 'text' , text: blobName
+  //  });
   } else if (event.message.type === 'audio') {
     //https://developers.line.biz/ja/reference/messaging-api/#audio-message
     //durationはこれでとれそう？ > https://www.npmjs.com/package/mp3-duration
