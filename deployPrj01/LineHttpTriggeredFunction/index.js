@@ -306,7 +306,7 @@ async function handleEvent(event) {
 
    const kansya3 = { type: 'text', text: getaitemsAry[2]};
 
-   const kansya4 = { type: 'text', text: kansyatext};
+   const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length -2 ]};
 
 //   const kansya4 = { type: 'text', text: getaitemsAry[getaitemsAry.length-1]};
 
