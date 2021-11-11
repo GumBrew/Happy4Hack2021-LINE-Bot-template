@@ -426,7 +426,8 @@ async function handleEvent(event) {
   //  <DefineNewItem>
   newItem.id = s;
   newItem.category = "text";
-  newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
+  //newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
+  newItem.time = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
   newItem.description = event.message.text;
   //  </DefineNewItem>
     // <CreateItem>
