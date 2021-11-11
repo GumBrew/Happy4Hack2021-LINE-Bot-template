@@ -233,8 +233,8 @@ async function handleEvent(event) {
   // </CreateClientObjectDatabaseContainer>
   //ここまでDBへの接続
 
-  var min = 7 ;
-  var max = 7 ;
+  var min = 1 ;
+  var max = 9999999 ;
   
   var ransuu = Math.floor( Math.random() * (max + 1 - min) ) + min ;
 
@@ -242,7 +242,7 @@ async function handleEvent(event) {
   //DBへ登録
   //  <DefineNewItem>
    const newItem = {
-    id: "11111",
+    id: "11114",
     category: "test",
     time: "23:00",
     description: "お風呂入れてくれてありがとう",
