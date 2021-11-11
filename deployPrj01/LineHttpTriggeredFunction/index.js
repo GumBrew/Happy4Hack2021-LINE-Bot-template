@@ -274,6 +274,7 @@ async function handleEvent(event) {
   // create a echoing text message
    const echo3 = { type: 'text', text: getitems};
 
+　 getaitemsAry = getitems.split(',')
 
 
   // use reply API
