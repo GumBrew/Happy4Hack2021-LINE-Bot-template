@@ -242,7 +242,7 @@ async function handleEvent(event) {
   //DBへ登録
   //  <DefineNewItem>
    const newItem = {
-    id: ransuu,
+    id: "11111",
     category: "test",
     time: "23:00",
     description: "お風呂入れてくれてありがとう",
@@ -288,7 +288,9 @@ async function handleEvent(event) {
 
    const kansya3 = { type: 'text', text: getaitemsAry[2]};
 
-   const kansya4 = { type: 'text', text: getaitemsAry[3]};
+   //const kansya4 = { type: 'text', text: getaitemsAry[3]};
+
+   const kansya4 = { type: 'text', text: ransuu};
 
 
   // use reply API
