@@ -276,6 +276,9 @@ async function handleEvent(event) {
 
 　 const getaitemsAry = getitems.split(',')
 
+　 const kansya1 = { type: 'text', text: getaitemsAry[0]};
+
+
 
   // use reply API
   //kawa:登録完了したことを伝える応答メッセージを送る　仕様上受け取った応答トークンをそのままリクエストボディに詰めて返却する必要。
