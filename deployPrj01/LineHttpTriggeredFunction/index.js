@@ -153,9 +153,9 @@ async function handleEvent(event) {
 
       const kansyatext = getaitemsAry[getaitemsAry.length -2 ];
 
-　    const kansya1 = { type: 'text', text: getaitemsAry[getaitemsAry.length -8 ]};
+　    //const kansya1 = { type: 'text', text: getaitemsAry[getaitemsAry.length -8 ]};
 
-      const kansya2 = { type: 'text', text: getaitemsAry[getaitemsAry.length -7 ]};
+//      const kansya2 = { type: 'text', text: getaitemsAry[getaitemsAry.length -7 ]};
 
       const kansya3 = { type: 'text', text: getaitemsAry[getaitemsAry.length -6 ]};
 
@@ -172,22 +172,36 @@ async function handleEvent(event) {
         originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/aed41e6f-c810-4ebe-80ce-01886f2cf93d.jpg`,
         previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/aed41e6f-c810-4ebe-80ce-01886f2cf93d.jpg`
       };
+
+      const kansyagazoukare = {
+        type: 'image',
+        originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/7c19d8b5-ae30-4aad-8bb7-670c26e4e107.jpg`,
+        previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/7c19d8b5-ae30-4aad-8bb7-670c26e4e107.jpg`
+      };
+  
+
+      const kansyagazougohan = {
+        type: 'image',
+        originalContentUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/14155cf3-e6e4-4bc2-b5f3-b4d7ec628449.jpg`,
+        previewImageUrl: `https://fnstor9mnqdxuwshf7x5jrpw.blob.core.windows.net/files/14155cf3-e6e4-4bc2-b5f3-b4d7ec628449.jpg`
+      };
+  
   
       const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
       await _sleep(3000);
  
 
-      // kawa: Bさんに感謝メッセージをプッシュ
-      //client2.pushMessage(userId2, pushmessage1)
-      //.then(() => {
-      //  console.log('push!')
-      //})
-      //.catch((err) => {
+   //    kawa: Bさんに感謝メッセージをプッシュ
+       client2.pushMessage(userId2, pushmessage1)
+       .then(() => {
+         console.log('push!')
+       })
+       .catch((err) => {
         // error handling
-    　//});
+     　});
 
-    //await _sleep(3000);
+    await _sleep(3000);
       
       //// kawa: Bさんに感謝メッセージをプッシュ
       //client2.pushMessage(userId2, kansya1)
@@ -202,16 +216,16 @@ async function handleEvent(event) {
     //await _sleep(3000);
 
 
-      // kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, kansya2)
-      .then(() => {
-        console.log('push!')
-      })
-      .catch((err) => {
-        // error handling
-    　});
+   //   // kawa: Bさんに感謝メッセージをプッシュ
+   //   client2.pushMessage(userId2, kansya2)
+   //   .then(() => {
+   //     console.log('push!')
+   //   })
+   //   .catch((err) => {
+   //     // error handling
+   // 　});
 
-    await _sleep(3500);
+ //   await _sleep(3500);
 
 
       // kawa: Bさんに感謝メッセージをプッシュ
@@ -225,6 +239,14 @@ async function handleEvent(event) {
 
         await _sleep(3500);
 
+                           // kawa: Bさんに感謝画像をプッシュ
+                           client2.pushMessage(userId2, kansyagazoukare)
+                           .then(() => {
+                             console.log('push!')
+                           })
+                           .catch((err) => {
+                             // error handling
+                         　});
 
            // kawa: Bさんに感謝メッセージをプッシュ
            client2.pushMessage(userId2, kansya4)
@@ -273,6 +295,15 @@ async function handleEvent(event) {
    .catch((err) => {
    // error handling
 　  });
+
+                           // kawa: Bさんに感謝画像をプッシュ
+                           client2.pushMessage(userId2, kansyagazougohan)
+                           .then(() => {
+                             console.log('push!')
+                           })
+                           .catch((err) => {
+                             // error handling
+                         　});
 
 await _sleep(3500);
          
