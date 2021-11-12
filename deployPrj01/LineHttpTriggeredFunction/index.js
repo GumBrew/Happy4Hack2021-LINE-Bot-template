@@ -187,6 +187,7 @@ async function handleEvent(event) {
         // error handling
     　});
 
+    await _sleep(3000);
       
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya1)
