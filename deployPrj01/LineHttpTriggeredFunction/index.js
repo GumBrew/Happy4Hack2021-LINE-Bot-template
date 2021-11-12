@@ -445,6 +445,28 @@ await _sleep(3500);
      */
      const { resource: createdItem } = await container.items.create(newItem);
     
+    
+      //乱数で主キー設定
+  　var min = 5 ;
+  　var max = 99999999 ;
+ 
+  　　var aa = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  　  var ss = String(aa);
+
+    
+     var newItem2 = {};
+     //  <DefineNewItem>
+     //newItem2.id = Number(s) + 1;
+     newItem2.id = ss;
+     newItem2.category = "text";
+     //newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
+     newItem2.time = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+     newItem2.description = event.message.text;
+     
+     // const { resource: createdItem } = await container.items.create(newItem2);
+     // const { resource2: createdItem2 } =  
+      await container.items.create(newItem2);
+     
      // </CreateItem>
      //ここまでDBへの登録
 
