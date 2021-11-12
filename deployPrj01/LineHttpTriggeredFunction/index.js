@@ -105,10 +105,10 @@ async function handleEvent(event) {
     if (event.message.text === '感謝を伝えます') {
 
 
-      // kawa: 仮の感謝メッセージ（DBから取得するロジックに変更が必要）
+      // kawa: 最初のヘッダーメッセージ
       var pushmessage1 = {
         type: 'text',
-        text: '2021/10/13 美味しいご飯を作ってくれてありがとう'
+        text: 'いつもいつもありがとう。貯めた感謝を伝えます'
       };
 
       //DBへの接続
@@ -178,7 +178,14 @@ async function handleEvent(event) {
       await _sleep(3000);
  
 
-
+      // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, pushmessage1)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
 
       
       // kawa: Bさんに感謝メッセージをプッシュ
