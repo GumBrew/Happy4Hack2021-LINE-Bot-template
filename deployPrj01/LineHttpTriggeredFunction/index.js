@@ -179,24 +179,24 @@ async function handleEvent(event) {
  
 
       // kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, pushmessage1)
-      .then(() => {
-        console.log('push!')
-      })
-      .catch((err) => {
+      //client2.pushMessage(userId2, pushmessage1)
+      //.then(() => {
+      //  console.log('push!')
+      //})
+      //.catch((err) => {
         // error handling
-    　});
+    　//});
 
-    await _sleep(3000);
+    //await _sleep(3000);
       
       //// kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, kansya1)
-      .then(() => {
-        console.log('push!')
-      })
-      .catch((err) => {
-        // error handling
-    　});
+      //client2.pushMessage(userId2, kansya1)
+      //.then(() => {
+      //  console.log('push!')
+      //})
+      //.catch((err) => {
+      //  // error handling
+    　//});
 
 
     //await _sleep(3000);
