@@ -108,7 +108,7 @@ async function handleEvent(event) {
       // kawa: 最初のヘッダーメッセージ
       var pushmessage1 = {
         type: 'text',
-        text: 'いつもいつもありがとう。貯めた感謝を伝えます'
+        text: 'いつもいつもありがとう。貯めた感謝を伝えるね'
       };
 
       //DBへの接続
@@ -189,7 +189,7 @@ async function handleEvent(event) {
 
     await _sleep(3000);
       
-      // kawa: Bさんに感謝メッセージをプッシュ
+      //// kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya1)
       .then(() => {
         console.log('push!')
@@ -199,7 +199,7 @@ async function handleEvent(event) {
     　});
 
 
-    await _sleep(3000);
+    //await _sleep(3000);
 
 
       // kawa: Bさんに感謝メッセージをプッシュ
@@ -274,16 +274,16 @@ async function handleEvent(event) {
    // error handling
 　  });
 
-//await _sleep(3500);
+await _sleep(3500);
          
-   // kawa: Bさんに感謝メッセージをプッシュ
-  // client2.pushMessage(userId2, kansya7)
-   //.then(() => {
-  //console.log('push!')
-  //})
-  //.catch((err) => {
-  // error handling
-　//  });
+    kawa: Bさんに感謝メッセージをプッシュ
+   client2.pushMessage(userId2, kansya7)
+   .then(() => {
+  console.log('push!')
+  })
+  .catch((err) => {
+   //error handling
+　  });
 
 
 
