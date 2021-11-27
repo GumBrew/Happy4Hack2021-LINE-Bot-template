@@ -485,18 +485,18 @@ await _sleep(3500);
   　  var ss = String(aa);
 
     
-     var newItem2 = {};
+    //  var newItem2 = {};
      //  <DefineNewItem>
      //newItem2.id = Number(s) + 1;
-     newItem2.id = ss;
-     newItem2.category = "text";
+    //  newItem2.id = ss;
+    //  newItem2.category = "text";
      //newItem.time = Year + "年" + Month + "月" + Day + "日" + Hour + ":" + Min;
-     newItem2.time = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
-     newItem2.description = event.message.text;
+    //  newItem2.time = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+   //   newItem2.description = event.message.text;
      
      // const { resource: createdItem } = await container.items.create(newItem2);
      // const { resource2: createdItem2 } =  
-      await container.items.create(newItem2);
+   //    await container.items.create(newItem2);
      
      // </CreateItem>
      //ここまでDBへの登録
