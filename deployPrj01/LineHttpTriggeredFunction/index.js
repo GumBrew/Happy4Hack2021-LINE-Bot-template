@@ -189,7 +189,7 @@ async function handleEvent(event) {
   
       const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-      await _sleep(3000);
+      await _sleep(4000);
  
 
    //    kawa: Bさんに感謝メッセージをプッシュ
@@ -201,7 +201,7 @@ async function handleEvent(event) {
         // error handling
      　});
 
-    await _sleep(3000);
+    await _sleep(4000);
       
       //// kawa: Bさんに感謝メッセージをプッシュ
       //client2.pushMessage(userId2, kansya1)
@@ -228,6 +228,7 @@ async function handleEvent(event) {
  //   await _sleep(3500);
 
 
+
       // kawa: Bさんに感謝メッセージをプッシュ
       client2.pushMessage(userId2, kansya3)
           .then(() => {
@@ -237,7 +238,7 @@ async function handleEvent(event) {
             // error handling
         　});
 
-        await _sleep(3500);
+        await _sleep(4500);
 
                            // kawa: Bさんに感謝画像をプッシュ
                            client2.pushMessage(userId2, kansyagazoukare)
@@ -248,6 +249,8 @@ async function handleEvent(event) {
                              // error handling
                          　});
 
+         await _sleep(4500);                    
+
            // kawa: Bさんに感謝メッセージをプッシュ
            client2.pushMessage(userId2, kansya4)
            .then(() => {
@@ -257,20 +260,7 @@ async function handleEvent(event) {
              // error handling
          　});
 
-         await _sleep(3500);
-
-         
-               // kawa: Bさんに感謝メッセージをプッシュ
-      client2.pushMessage(userId2, kansya5)
-      .then(() => {
-        console.log('push!')
-      })
-      .catch((err) => {
-        // error handling
-    　});
-
-    await _sleep(3500);
-
+         await _sleep(4500);
 
                    // kawa: Bさんに感謝画像をプッシュ
                    client2.pushMessage(userId2, kansyagazou)
@@ -282,7 +272,20 @@ async function handleEvent(event) {
                  　});
 
 
-         await _sleep(3500);
+         await _sleep(4500);
+         
+               // kawa: Bさんに感謝メッセージをプッシュ
+      client2.pushMessage(userId2, kansya5)
+      .then(() => {
+        console.log('push!')
+      })
+      .catch((err) => {
+        // error handling
+    　});
+
+    await _sleep(4500);
+
+
 
 
          
@@ -296,6 +299,8 @@ async function handleEvent(event) {
    // error handling
 　  });
 
+await _sleep(4500);
+
                            // kawa: Bさんに感謝画像をプッシュ
                            client2.pushMessage(userId2, kansyagazougohan)
                            .then(() => {
@@ -305,7 +310,7 @@ async function handleEvent(event) {
                              // error handling
                          　});
 
-await _sleep(3500);
+await _sleep(5300);
          
     kawa: Bさんに感謝メッセージをプッシュ
    client2.pushMessage(userId2, kansya7)
