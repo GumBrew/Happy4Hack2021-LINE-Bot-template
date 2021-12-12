@@ -285,9 +285,18 @@ async function handleEvent(event) {
 
     await _sleep(4500);
 
+                           // kawa: Bさんに感謝画像をプッシュ
+                           client2.pushMessage(userId2, kansyagazougohan)
+                           .then(() => {
+                             console.log('push!')
+                           })
+                           .catch((err) => {
+                             // error handling
+                         　});
 
 
 
+                         await _sleep(4500);
          
          
     // kawa: Bさんに感謝メッセージをプッシュ
@@ -301,18 +310,9 @@ async function handleEvent(event) {
 
 await _sleep(4500);
 
-                           // kawa: Bさんに感謝画像をプッシュ
-                           client2.pushMessage(userId2, kansyagazougohan)
-                           .then(() => {
-                             console.log('push!')
-                           })
-                           .catch((err) => {
-                             // error handling
-                         　});
 
-await _sleep(5300);
          
-    kawa: Bさんに感謝メッセージをプッシュ
+  //  kawa: Bさんに感謝メッセージをプッシュ
    client2.pushMessage(userId2, kansya7)
    .then(() => {
   console.log('push!')
